@@ -37,11 +37,12 @@
 
 import sys
 from PyQt4 import QtGui
+from PyQt4 import QtOpenGL
 
 app = QtGui.QApplication(sys.argv)
 
 widget = QtGui.QWidget()
-widget.resize(250, 150)
+widget.resize(800, 600)
 widget.setWindowTitle('simple')
 widget.show()
 
