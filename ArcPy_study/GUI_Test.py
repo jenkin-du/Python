@@ -36,14 +36,32 @@
 # app.mainloop()
 
 import sys
+
 from PyQt4 import QtGui
-from PyQt4 import QtOpenGL
+
+
+class Icon(QtGui.QWidget):
+    def __init__(self, parent=None):
+        QtGui.QWidget.__init__(self, parent)
+
+        self.setGeometry(100, 100, 450, 350)
+        self.setWindowTitle('this is a window')
+        self.setWindowIcon(QtGui.QIcon('icons/app.png'))
+        # 设置气泡提示
+        self.setWindowTitle('Tooltip')
+
+        self.setToolTip('This is a <b>QWidget</b> widget')
+        # QtGui.QToolTip.setFont(QtGui.QFont('OldEnglish', 10))
+
 
 app = QtGui.QApplication(sys.argv)
+#
+# widget = QtGui.QWidget()
+# widget.resize(800, 600)
+# widget.setWindowTitle('simple')
+# widget.show()
 
-widget = QtGui.QWidget()
-widget.resize(800, 600)
-widget.setWindowTitle('simple')
-widget.show()
+icon = Icon()
+icon.show()
 
 sys.exit(app.exec_())
