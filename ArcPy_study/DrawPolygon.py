@@ -2,6 +2,7 @@
 
 import arcpy
 
+
 arcpy.env.overwriteOutput = True
 # 指定输出数据的路径
 outputFeatureClass = r"H:\编程\数据\Python\ArcPython\Holepoly.shp"

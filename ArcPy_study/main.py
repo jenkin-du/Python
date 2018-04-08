@@ -8,6 +8,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+import sys
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -17,13 +18,16 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_MainWindow(object):
+
+class Ui_MainWindow(QtGui.QWidget):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(578, 339)
@@ -77,3 +81,8 @@ class Ui_MainWindow(object):
         self.action_5.setText(_translate("MainWindow", "撤回", None))
         self.action_6.setText(_translate("MainWindow", "重做", None))
 
+
+app = QtGui.QApplication(sys.argv)
+mainForm = Ui_MainWindow()
+mainForm.show()
+sys.exit(app.exec_())
